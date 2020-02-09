@@ -12,3 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5fc7c95dbd1c4249a482c640b9c6a8c, type: 3}
   m_Name: StandartVisualSettings
   m_EditorClassIdentifier: 
+  visualSettings:
+  - DebugTitle: Tank
+    Type: 0
+    VisualGameObject: {fileID: 0}
+  - DebugTitle: Helicopter
+    Type: 1
+    VisualGameObject: {fileID: 0}
+  - DebugTitle: Antiaircraft
+    Type: 2
+    VisualGameObject: {fileID: 0}

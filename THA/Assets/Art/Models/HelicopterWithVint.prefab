@@ -185,17 +185,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: b0b89e750798e874cbfdefcc06728cea,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 4.1189075
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b0b89e750798e874cbfdefcc06728cea,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.19
+      value: -0.033288047
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b0b89e750798e874cbfdefcc06728cea,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.07325926
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b0b89e750798e874cbfdefcc06728cea,
         type: 3}
@@ -210,7 +210,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: b0b89e750798e874cbfdefcc06728cea,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.99731296
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b0b89e750798e874cbfdefcc06728cea,
         type: 3}
@@ -220,7 +220,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: b0b89e750798e874cbfdefcc06728cea,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -8.402
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b0b89e750798e874cbfdefcc06728cea,
         type: 3}
@@ -255,7 +255,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: b0b89e750798e874cbfdefcc06728cea,
         type: 3}
       propertyPath: m_Name
-      value: Helicopter Variant
+      value: HelicopterWithVint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0b89e750798e874cbfdefcc06728cea, type: 3}

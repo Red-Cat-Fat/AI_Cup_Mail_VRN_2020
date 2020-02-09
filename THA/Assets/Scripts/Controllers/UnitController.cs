@@ -11,8 +11,17 @@ namespace Game.Controllers
     }
     public class UnitController : MonoBehaviour
     {
-        public UnitType Type;
+        public UnitType Type
+        {
+            get
+            {
+                return _type;
+            }
+        }
+
         [SerializeField]
         private UnitType _type;
+
+
     }
 }

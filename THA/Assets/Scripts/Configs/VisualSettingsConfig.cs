@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEditor;
+using Game.Controllers;
 using UnityEngine;
 
 namespace Game.Configs
@@ -12,17 +12,17 @@ namespace Game.Configs
 		public class VisualPair
 		{
 			[HideInInspector] public string DebugTitle;
-			public Controllers.UnitType Type;
+			public UnitType Type;
 			public GameObject VisualGameObject;
 		}
 
 		[SerializeField]
-		private List<VisualPair> visualSettings = new List<VisualPair>();
+		private List<VisualPair> _visualSettings = new List<VisualPair>();
 
 		public void OnValidate()
 		{
 
-			foreach (var pair in visualSettings)
+			foreach (var pair in _visualSettings)
 			{
 				pair.DebugTitle = pair.Type.ToString();
 			}
@@ -30,7 +30,7 @@ namespace Game.Configs
 
 		public GameObject GetVisual(Controllers.UnitType type)
 		{
-			foreach (var pair in visualSettings)
+			foreach (var pair in _visualSettings)
 			{
 				if (pair.Type == type)
 				{

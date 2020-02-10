@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: SettingsData
   m_EditorClassIdentifier: Assembly-CSharp:Game.Configs:GameSettingsData
-  VisualSettings: {fileID: 0}
+  VisualSettings: {fileID: 11400000, guid: 60d85b573a491cb4fa4a33ac4fddc42c, type: 2}
+  DamageByType: {fileID: 0}

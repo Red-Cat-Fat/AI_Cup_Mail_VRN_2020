@@ -6,10 +6,10 @@ using UnityEngine;
 
 namespace Game.Configs
 {
-	[CreateAssetMenu(fileName = "Total config", menuName = "TotalConfig")]
 	public class GameSettingsData : ScriptableObject
 	{
 		public VisualSettingsConfig VisualSettings;
+		public DamageByTypeConfig DamageByType;
 	}
 
 	public class GameSettingsConfig : ScriptableSingleton<GameSettingsData>

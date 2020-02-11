@@ -23,7 +23,7 @@ namespace Game.Controllers
 
 		private void Awake()
 		{
-			var visual = GameSettingsConfig.instance.VisualSettings.GetVisual(_type);
+			var visual = GameController.VisualSettingsConfig?.GetVisual(_type);
 			if (visual != null)
 			{
 				Instantiate(visual, transform.position, Quaternion.identity, transform);

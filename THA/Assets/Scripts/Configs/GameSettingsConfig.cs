@@ -6,7 +6,8 @@ using UnityEngine;
 
 namespace Game.Configs
 {
-	public class GameSettingsData : ScriptableObject
+	[CreateAssetMenu(fileName = "StandartSettingsConfig", menuName = "Set Conf")]
+	public class GameSettingsConfig : ScriptableObject
 	{
 		[Tooltip("World")]
 		public float TileStep;
@@ -15,10 +16,5 @@ namespace Game.Configs
 		[Tooltip("Configs")]
 		public VisualSettingsConfig VisualSettings;
 		public DamageByTypeConfig DamageByType;
-	}
-
-	public class GameSettingsConfig : ScriptableSingleton<GameSettingsData>
-	{
-
 	}
 }

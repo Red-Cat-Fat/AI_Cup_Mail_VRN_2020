@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: SettingsData
-  m_EditorClassIdentifier: Assembly-CSharp:Game.Configs:GameSettingsData
+  m_Script: {fileID: 11500000, guid: 18f78a5b657fc4c449740845727d19b7, type: 3}
+  m_Name: StandartSettingsConfig
+  m_EditorClassIdentifier: 
+  TileStep: 5
+  WorldSizeX: 5
+  WorldSizeY: 10
   VisualSettings: {fileID: 11400000, guid: 60d85b573a491cb4fa4a33ac4fddc42c, type: 2}
-  DamageByType: {fileID: 0}
+  DamageByType: {fileID: 11400000, guid: c77b4df358204a442bc2972afb0df884, type: 2}

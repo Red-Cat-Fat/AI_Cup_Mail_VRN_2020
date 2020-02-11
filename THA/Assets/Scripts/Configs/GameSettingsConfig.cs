@@ -8,6 +8,11 @@ namespace Game.Configs
 {
 	public class GameSettingsData : ScriptableObject
 	{
+		[Tooltip("World")]
+		public float TileStep;
+		public int WorldSizeX;
+		public int WorldSizeY;
+		[Tooltip("Configs")]
 		public VisualSettingsConfig VisualSettings;
 		public DamageByTypeConfig DamageByType;
 	}

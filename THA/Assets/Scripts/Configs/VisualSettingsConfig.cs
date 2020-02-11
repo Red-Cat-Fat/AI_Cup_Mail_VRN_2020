@@ -19,6 +19,9 @@ namespace Game.Configs
 		[SerializeField]
 		private List<VisualPair> _visualSettings = new List<VisualPair>();
 
+		[SerializeField]
+		private GameObject _tileGameObject;
+
 		public void OnValidate()
 		{
 
@@ -28,7 +31,7 @@ namespace Game.Configs
 			}
 		}
 
-		public GameObject GetVisual(Controllers.UnitType type)
+		public GameObject GetVisual(UnitType type)
 		{
 			foreach (var pair in _visualSettings)
 			{
@@ -39,6 +42,11 @@ namespace Game.Configs
 			}
 
 			return null;
+		}
+
+		public GameObject GetTileGameObject()
+		{
+			return _tileGameObject;
 		}
 	}
 }

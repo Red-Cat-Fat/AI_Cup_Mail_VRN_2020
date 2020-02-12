@@ -12,4 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5fc7c95dbd1c4249a482c640b9c6a8c, type: 3}
   m_Name: StandartVisualSettings
   m_EditorClassIdentifier: 
-  _visualSettings: []
+  _visualSettings:
+  - DebugTitle: Tank
+    Type: 0
+    VisualGameObject: {fileID: 387411898898083532, guid: 69ff4499a07119f4a97551fd69b470d1,
+      type: 3}
+  - DebugTitle: Helicopter
+    Type: 1
+    VisualGameObject: {fileID: 3702061260424953155, guid: 606837a306fb29648b1c6a8f2ff7a89a,
+      type: 3}
+  - DebugTitle: Antiaircraft
+    Type: 2
+    VisualGameObject: {fileID: 1686555549044017502, guid: 8fb1a69c40e6adb4bba0ff49ad5bdab0,
+      type: 3}
+  _tileGameObject: {fileID: 3851247764323695478, guid: e31840d913ac60c44ba32128e16dc123,
+    type: 3}

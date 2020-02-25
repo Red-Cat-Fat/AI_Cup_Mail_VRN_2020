@@ -43,7 +43,9 @@ namespace Game.Controllers
 						Instantiate(
 							tileGameObject, 
 							new Vector3(i * tileStep, 0, j * tileStep),
-							Quaternion.identity);
+							Quaternion.identity, 
+							gameObject.transform);
+					map[i][j].name = $"Tile[{i};{j}]";
 				}
 			}
 		}

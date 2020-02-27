@@ -34,6 +34,11 @@ namespace Game.Controllers
             _positionY = y;
         }
 
+        public void SetType(TileType type)
+        {
+            _type = type;
+        }
+
 		public override void OnSelected()
 		{
 			_changerMaterial.SetColor(Color.red);

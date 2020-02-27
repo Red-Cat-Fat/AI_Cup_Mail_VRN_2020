@@ -12,8 +12,8 @@ namespace Game.Controllers
 		public static VisualSettingsConfig VisualSettingsConfig => Instance?._gameSettingsConfig.VisualSettings;
 		[SerializeField]
 		private GameSettingsConfig _gameSettingsConfig;
-		private GameObject[][] map;
 
+        private MapController _map;
         public int SizeMapX => _gameSettingsConfig.WorldSizeX;
         public int SizeMapY => _gameSettingsConfig.WorldSizeY;
 
@@ -30,30 +30,9 @@ namespace Game.Controllers
 
 			var x = _gameSettingsConfig.WorldSizeX;
 			var y = _gameSettingsConfig.WorldSizeY;
-			CreateMap(x, y);
-		}
 
-		public void CreateMap(int x, int y)
-		{
-			var tileStep = _gameSettingsConfig.TileStep;
-			var tileGameObject = _gameSettingsConfig.VisualSettings.GetTileGameObject();
-			map = new GameObject[x][];
-			for (int i = 0; i < map.Length; i++)
-			{
-				map[i] = new GameObject[y];
-				for (int j = 0; j < map[i].Length; j++)
-				{
-					map[i][j] = 
-						Instantiate(
-							tileGameObject, 
-							new Vector3(i * tileStep, 0, j * tileStep),
-							Quaternion.identity, 
-							gameObject.transform);
-					map[i][j].name = $"Tile[{i};{j}]";
-                    var tileController = map[i][j].GetComponent<TileController>();
-					tileController?.SetPosition(i, j);
-                }
-			}
+            _map = new MapController();
+            _map.CreateMap(x, y, _gameSettingsConfig.TileStep, _gameSettingsConfig.VisualSettings.GetTileGameObject(), this.gameObject);
 		}
 	}
 }

@@ -9,6 +9,7 @@ namespace Game.System
 	{
 		public Camera Camera;
 		private ISelectedObject _lastSelectedObject;
+
 		void Update()
 		{
 			if (Input.GetMouseButtonDown(0))

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StandartSettingsConfig
   m_EditorClassIdentifier: 
   TileStep: 5
-  WorldSizeX: 6
+  WorldSizeX: 7
   WorldSizeY: 13
   VisualSettings: {fileID: 11400000, guid: 60d85b573a491cb4fa4a33ac4fddc42c, type: 2}
   DamageByType: {fileID: 11400000, guid: c77b4df358204a442bc2972afb0df884, type: 2}

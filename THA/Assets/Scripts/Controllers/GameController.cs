@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using Game.Configs;
+using Game.Utilities;
 using UnityEngine;
 
 namespace Game.Controllers
@@ -19,7 +20,9 @@ namespace Game.Controllers
         public int SizeMapX => _gameSettingsConfig.WorldSizeX;
         public int SizeMapY => _gameSettingsConfig.WorldSizeY;
 
-		private void Awake()
+        private Dictionary<DisposebleEvent<int, int>, int> _teamsCollBacks = new Dictionary<DisposebleEvent<int, int>, int>(); 
+
+        private void Awake()
         {
             InitialInstance();
             InitialMap();
@@ -48,11 +51,32 @@ namespace Game.Controllers
 			_playerControllers = new PlayerController[countPlayers];
             for (var index = 0; index < countPlayers; index++)
             {
-                _playerControllers[index] = new PlayerController(index, _gameSettingsConfig.TeamColors[index]);
+                _playerControllers[index] = new PlayerController(index, _gameSettingsConfig.TeamColors[index], _gameSettingsConfig.StartReserve);
 				var baseTile = _map.GetFreeBase();
                 _playerControllers[index].SetBase(baseTile);
 				_playerControllers[index].AddReserve(_gameSettingsConfig.StartReserve);
+
+                var callback = new DisposebleEvent<int, int>((teamId, countReserve) =>
+                    {
+
+                    }
+                );
+
+                _playerControllers[index].SubscribeCanBuyUnitEvent();
 			}
+        }
+
+        private void ShowCanBy(int id)
+        {
+
+        }
+
+        private void OnDisable()
+        {
+            foreach (var callBack in _teamsCollBacks)
+            {
+                callBack.Key.Dispose();
+            }
         }
 	}
 }

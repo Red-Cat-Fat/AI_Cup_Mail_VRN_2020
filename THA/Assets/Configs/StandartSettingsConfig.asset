@@ -15,5 +15,10 @@ MonoBehaviour:
   TileStep: 5
   WorldSizeX: 7
   WorldSizeY: 13
+  TeamColors:
+  - {r: 0.025368007, g: 0.5188679, b: 0, a: 0}
+  - {r: 0.02630868, g: 0, b: 0.745283, a: 0}
+  ReservePrice: 0
+  StartReserve: 0
   VisualSettings: {fileID: 11400000, guid: 60d85b573a491cb4fa4a33ac4fddc42c, type: 2}
   DamageByType: {fileID: 11400000, guid: c77b4df358204a442bc2972afb0df884, type: 2}

@@ -14,6 +14,9 @@ namespace Game.Controllers
 		private GameSettingsConfig _gameSettingsConfig;
 		private GameObject[][] map;
 
+        public int SizeMapX => _gameSettingsConfig.WorldSizeX;
+        public int SizeMapY => _gameSettingsConfig.WorldSizeY;
+
 		private void Awake()
 		{
 			if (Instance == null)
@@ -24,6 +27,7 @@ namespace Game.Controllers
 			{
 				return;
 			}
+
 			var x = _gameSettingsConfig.WorldSizeX;
 			var y = _gameSettingsConfig.WorldSizeY;
 			CreateMap(x, y);
@@ -46,7 +50,9 @@ namespace Game.Controllers
 							Quaternion.identity, 
 							gameObject.transform);
 					map[i][j].name = $"Tile[{i};{j}]";
-				}
+                    var tileController = map[i][j].GetComponent<TileController>();
+					tileController?.SetPosition(i, j);
+                }
 			}
 		}
 	}

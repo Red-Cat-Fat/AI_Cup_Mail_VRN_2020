@@ -9,13 +9,16 @@ namespace Game.Configs
 	[CreateAssetMenu(fileName = "StandartSettingsConfig", menuName = "Set Conf")]
 	public class GameSettingsConfig : ScriptableObject
 	{
-		[Tooltip("World")]
+		[Header("World")]
 		public float TileStep;
 		public int WorldSizeX;
 		public int WorldSizeY;
-        [Tooltip("Teams")]
+        [Header("Teams")]
         public Color[] TeamColors;
-		[Tooltip("Configs")]
+
+        public int ReservePrice;
+        public int StartReserve;
+		[Header("Configs")]
 		public VisualSettingsConfig VisualSettings;
 		public DamageByTypeConfig DamageByType;
 

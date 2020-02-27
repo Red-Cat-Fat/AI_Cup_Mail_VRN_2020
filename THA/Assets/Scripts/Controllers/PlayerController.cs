@@ -11,6 +11,7 @@ public class PlayerController
     private List<UnitController> _units = new List<UnitController>();
     private TileController _base;
     private Color _teamColor;
+    private int _reserve;
 
     public PlayerController(int id, Color teamColor)
     {
@@ -27,5 +28,10 @@ public class PlayerController
     public void AddUnit(UnitController unit)
     {
         _units.Add(unit);
+    }
+
+    public void AddReserve(int reserve)
+    {
+        _reserve += reserve;
     }
 }

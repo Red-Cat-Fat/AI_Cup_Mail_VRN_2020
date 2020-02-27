@@ -8,7 +8,6 @@ namespace Game.Visualizer
 	public class ChangerMaterial : MonoBehaviour
 	{
 		private MeshRenderer _meshRenderer;
-
 		private Color _defaultColor;
 		
 		private void Awake()
@@ -31,6 +30,11 @@ namespace Game.Visualizer
 				material.color = color;
 			}
 		}
+
+        public void SetDefaultColor(Color color)
+        {
+            _defaultColor = color;
+        }
 
 		public void ResetColor()
 		{

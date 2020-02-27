@@ -13,8 +13,11 @@ namespace Game.Configs
 		public float TileStep;
 		public int WorldSizeX;
 		public int WorldSizeY;
+        [Tooltip("Teams")]
+        public Color[] TeamColors;
 		[Tooltip("Configs")]
 		public VisualSettingsConfig VisualSettings;
 		public DamageByTypeConfig DamageByType;
-	}
+
+    }
 }

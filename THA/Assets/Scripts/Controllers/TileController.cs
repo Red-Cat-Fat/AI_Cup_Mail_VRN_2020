@@ -20,7 +20,10 @@ namespace Game.Controllers
 		[SerializeField]
 		private TileType _type;
 
-        private int _positionX;
+        private int _teamId = -1;
+        public int TeamID => _teamId;
+
+		private int _positionX;
         private int _positionY;
 
         public int PositionX => _positionX;
@@ -37,6 +40,13 @@ namespace Game.Controllers
         public void SetType(TileType type)
         {
             _type = type;
+        }
+
+        public void SetTeamId(int id, Color colorTeam)
+        {
+            _teamId = id;
+			_changerMaterial.SetDefaultColor(colorTeam);
+			_changerMaterial.ResetColor();
         }
 
 		public override void OnSelected()

@@ -14,6 +14,8 @@ namespace Game.Controllers
 		private GameSettingsConfig _gameSettingsConfig;
 
         private MapController _map;
+        private PlayerController[] _playerControllers;
+        
         public int SizeMapX => _gameSettingsConfig.WorldSizeX;
         public int SizeMapY => _gameSettingsConfig.WorldSizeY;
 
@@ -33,6 +35,15 @@ namespace Game.Controllers
 
             _map = new MapController();
             _map.CreateMap(x, y, _gameSettingsConfig.TileStep, _gameSettingsConfig.VisualSettings.GetTileGameObject(), this.gameObject);
-		}
+
+            var countPlayers = _gameSettingsConfig.TeamColors.Length;
+			_playerControllers = new PlayerController[countPlayers];
+            for (var index = 0; index < countPlayers; index++)
+            {
+                _playerControllers[index] = new PlayerController(index, _gameSettingsConfig.TeamColors[index]);
+				var baseTile = _map.GetFreeBase();
+                _playerControllers[index].SetBase(baseTile);
+			}
+        }
 	}
 }

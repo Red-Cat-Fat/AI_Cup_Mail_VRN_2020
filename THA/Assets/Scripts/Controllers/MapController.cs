@@ -7,38 +7,37 @@ namespace Game.Controllers
 {
     public class MapController
     {
-        private Dictionary<TileController, int> _basesTile = new Dictionary<TileController, int>();
-
-        private GameObject[][] _map;
+        private TileController[][] _map;
 
         public void CreateMap(int x, int y, float tileStep, GameObject tileGameObject, GameObject parent)
         {
-            _map = new GameObject[x][];
+            _map = new TileController[x][];
             for (int i = 0; i < _map.Length; i++)
             {
-                _map[i] = new GameObject[y];
+                _map[i] = new TileController[y];
                 for (int j = 0; j < _map[i].Length; j++)
                 {
-                    _map[i][j] =
-                        Object.Instantiate(
-                            tileGameObject,
-                            new Vector3(i * tileStep, 0, j * tileStep),
-                            Quaternion.identity,
-                            parent.transform);
-                    _map[i][j].name = $"Tile[{i};{j}]";
-                    var tileController = _map[i][j].GetComponent<TileController>();
+                    var tileObject = Object.Instantiate(
+                        tileGameObject,
+                        new Vector3(i * tileStep, 0, j * tileStep),
+                        Quaternion.identity,
+                        parent.transform);
+
+                    var tileController = tileObject.GetComponent<TileController>();
                     if (tileController == null)
                     {
                         Debug.LogError("tileController is null");
                         return;
                     }
 
+                    _map[i][j] = tileController;
+                    _map[i][j].name = $"Tile[{i};{j}]";
+
                     tileController.SetPosition(i, j);
 
                     if ((i == 0 || i == _map.Length - 1) && (j == 0 || j == _map[i].Length - 1))
                     {
                         tileController.SetType(TileType.Base);
-                        _basesTile.Add(tileController, -1);
                     }
                 }
             }
@@ -46,11 +45,14 @@ namespace Game.Controllers
 
         public TileController GetFreeBase()
         {
-            foreach (var tile in _basesTile.Keys)
+            foreach (var tileLine in _map)
             {
-                if (_basesTile[tile] < 0)
+                foreach (var tile in tileLine)
                 {
-                    return tile;
+                    if (tile.Type == TileType.Base && tile.TeamID < 0)
+                    {
+                        return tile;
+                    }
                 }
             }
 
